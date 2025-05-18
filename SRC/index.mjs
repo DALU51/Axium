@@ -4,7 +4,7 @@ const router = express();
 
 
 router.get('/',(req,res) => {
-    res.render('index.html')
+    res.render('index')
 })
 
 export default router
