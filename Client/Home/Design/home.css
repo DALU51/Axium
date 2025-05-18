@@ -1,0 +1,48 @@
+body{
+    background-color: black;
+    margin: 0px;
+}
+
+@font-face {
+    font-family: Morai;
+    src: url(/Home/Lib/Font/MoiraiOne-Regular.ttf);
+}
+
+/*Header*/
+
+#MainHead {
+    width: 100%;
+    display: flex;
+    position: fixed;
+    height: 100px;
+    background-image: url(/Home/Lib/Images/blue_night.jpg);
+    background-position: 100px;
+}
+
+.profile_container{
+    width: 50%;
+}
+
+.wlcomeMsg{
+    width: 50%;
+    font-family: Morai;
+    align-self: center;
+}
+
+.msg{
+    margin: 0px 5px;
+    display: flex;
+    gap: 5px;
+    color: white;
+    float: right;
+}
+
+/*Profile*/
+
+.profile{
+    height: 750px;
+    width: 250px;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    margin: 30px 15px 0px;
+}
