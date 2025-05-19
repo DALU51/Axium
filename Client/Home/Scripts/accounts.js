@@ -47,7 +47,12 @@ async function getAccounts() {
 
 //Dropdowns
 
+// const debit = document.getElementById()
 
+// async function dropdown() {
+
+    
+// }
 
 
 //Send Account transfers
