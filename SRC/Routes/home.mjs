@@ -31,13 +31,7 @@ router.get('/accounts',(req,res) => {
     db.query('SELECT * FROM Accounts where user_id = ?',[id],(err,rows) => {
         
         console.log(rows)
-
-        const data = [
-            rows[0].account_id,
-            rows[0].account_nickname,
-            rows[0].account_balance,
-            rows[0].available_balance
-        ]
+        const data = rows
         console.log(data)
         res.json(data)
     })

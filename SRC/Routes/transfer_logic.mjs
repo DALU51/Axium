@@ -19,10 +19,7 @@ router.post('/',(req,res) => {
                 res.status(404).json('No debit account available')
             }else{
                 if(rows[0].available_balance < transfer.amount){
-
                     console.log(rows[0].available_balance < transfer.amount)
-                    console.log(typeof rows[0].available_balance)
-                    console.log(typeof transfer.amount)
                     console.log('Insufficient Available Balance')
                     res.status(404).json('You have an insufficient available balance')
                 } else{
@@ -51,7 +48,6 @@ router.post('/',(req,res) => {
 
                                     const UserID = rows[0].user_id
                                     console.log('Getting user ID')
-                                    console.log(UserID)
                                     transfer.userID = UserID
 
                                 try{
@@ -68,6 +64,7 @@ router.post('/',(req,res) => {
 
                                     console.log("Transaction Logged")
                                     res.json("Transaction completed")
+                                    
                                 }catch{
                                     if (err) throw err
                                 }
