@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Home/Design/home.css">
+    <link rel="stylesheet" href="/transfer/design/transfer.css">
+    <title><%-title%></title>
+</head>
+<body>
+   <%-include('./home/header.ejs') %>
+
+    <form id="transfer" class="acc_transfer">
+        <input type="text" name="Debit_Account" id="dr" placeholder="Debit Account">
+        <input type="text" name="Credit_Account" id="cr" placeholder="Credit Account">
+        <input type="amount" name="amount" id="amt" placeholder="Amount">
+        <input type="submit" class="Submit" id="submit">
+    </form>
+
+<script src="/transfer/scripts/transfer.js"></script>
+</body>
+</html>

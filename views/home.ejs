@@ -7,22 +7,11 @@
     <title><%-title%></title>
 </head>
 <body>
-    <header id="MainHead">
-        <div class="profile_container">
-            <div id="" class="profile">
+    <%-include('./layouts/home/header.ejs') %>
 
-            </div>
-
-        </div>
-        <div id-="welcome" class="wlcomeMsg">
-            <h1 class="msg">
-                Good
-                <div id="time">
-                </div>
-                <%-user%>
-            </h1>
-        </div>
-    </header>
+    <div id="MainBody">
+        <%-include('./layouts/home/dashboard.ejs')%>
+    </div>
     
 
     <script src="/Home/Scripts/accounts.js"></script>
