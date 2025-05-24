@@ -53,7 +53,6 @@ body{
 #MainBody {
     height: 1000px;
     width: 100%;
-    position: fixed;
     display: flex;
     align-items: flex-end;
 }
@@ -65,12 +64,9 @@ body{
 
 #content-container{
 
-    float: right;
     background-color: black;
-    bottom: 0px;
     height: 900px;
     width: 1007px;
-    flex: 1;
     display: flex;
 }
 
@@ -92,7 +88,7 @@ body{
 .accs{
     color: white;
     padding: 5px;
-    margin: 2px;
+    margin: 10px;
     border: 1px solid white;
     border-radius: 2.5%;
     font-size: 16px;
@@ -130,7 +126,7 @@ p:hover{
 #Quick-Transfers { 
     color: white;
     border: 1px solid white;
-    border-radius: 5%;
+    border-radius: 2%;
     display: flex;
     flex-direction: column;
     padding-bottom: 10px;
@@ -142,7 +138,7 @@ p:hover{
 #Quick-Transfers h2{
     margin: 0;
     font-weight: bolder;
-    font-size: 32px;
+    font-size: 24px;
     padding-bottom: 10px;
     padding: 0 5%;
     font-family: Morai;
@@ -167,7 +163,7 @@ p:hover{
     width: 20%;
     align-self: center;
     align-items: center;
-    font-size: 17px;
+    font-size: 14px;
 }
 
 .form_trans :last-child {
@@ -209,3 +205,14 @@ p:hover{
 #submit:hover{
     background-color: lightblue;
 }
+
+/* Cars and news design */
+
+.top_container{
+    height: 50%;
+}
+
+.news{
+    height: 65%;
+}
+

@@ -17,7 +17,7 @@ import db from "./database.mjs"
     }}
 
 router.get("/",(req,res) => {
-    const id  = 1
+    const id  = 529955
     db.query('SELECT firstname FROM Users where userID = ?',[id],(err,rows) => {
         if (err) throw err
         const name = rows[0].firstname
@@ -27,7 +27,7 @@ router.get("/",(req,res) => {
 })
 
 router.get('/accounts',(req,res) => {
-    const id = 1
+    const id = 529955
     db.query('SELECT * FROM Accounts where user_id = ?',[id],(err,rows) => {
         
         console.log(rows)
@@ -37,8 +37,22 @@ router.get('/accounts',(req,res) => {
     })
 })
 
+router.get('/balances',(req,res) => {
+
+    const id = 529955
+
+    db.query('SELECT SUM(available_balance) AS Total_balance FROM Accounts WHERE user_id = ?',[id],(err,rows) => {
+
+        if (err) throw err
+
+        const balance = rows[0].Total_balance
+        console.log(balance)
+        res.json(balance)
+    })
+})
+
 router.get('/transfer',(req,res) => {
-    res.render('home.ejs',{layout: "layouts/accountTransfer",title:"Account Transfer",user: "John",time: `${message()}`})
+    res.render('home.ejs',{layout: "layouts/accountTransfer",title:"Account Transfer",user: "Henry",time: `${message()}`})
 })
 
 export default router

@@ -38,7 +38,7 @@ router.post('/',(req,res) => {
                                 transfer.trans_id = transaction_id
 
                                 const transactionDTM = new Date();
-                                let x = transactionDTM.toLocaleDateString()
+                                let x = transactionDTM.toISOString().split('T')[0]
                                 let y = transactionDTM.toTimeString().split('GMT')[0]
                                 transfer.trans_date_time = x +' '+ y
 
