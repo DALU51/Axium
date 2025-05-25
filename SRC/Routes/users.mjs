@@ -1,6 +1,8 @@
 import express from "express"
 const router = express()
 
+import db from "./database.mjs"
+
 router.post('/',(req,res)=> {
         console.log("New user info received")
         const user = req.body;

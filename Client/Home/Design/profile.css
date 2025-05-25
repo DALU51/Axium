@@ -1,0 +1,99 @@
+.Container { 
+    width: 100%;
+    height: 40%;
+    border-radius:10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-Container{
+    width: 100%;
+    height: 50%;
+    display:flex ;
+    margin-top: 25px;
+}
+
+.Usr-Image {
+    width: 100px;
+    height: 100px;
+    background-image: url(../Lib/Images/Land.jpeg);
+    background-size: 25pc;
+    border-radius: 50px;
+    align-self: center;
+    margin: 0 0 0 5%;
+}
+
+.User-info{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    justify-content: center;
+
+}
+
+.UsrNm { 
+    margin: 5px 0 0 5px;
+    font-size: 28px;
+    font-weight: bolder;
+}
+
+.Date{ 
+    font-size: 14px;
+    margin: 0 0 0 5px;;
+}
+
+.Balance-Container {
+    justify-items: center;
+    margin-top: 25px;
+}
+
+.Balance {
+    margin: 0;
+    font-weight: bolder;
+    font-size: 32px;
+}
+
+.Message { 
+    margin: 0;
+}
+
+.Nav { 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    margin-top: 40px;
+    margin: 20px 50px;
+}
+
+.List a{
+    text-decoration: none;
+    color: black;
+    font-size: 22px;
+}
+
+.List a:hover{ 
+    color: lightblue;
+    text-decoration: underline;
+}
+
+.List a:active { 
+    color: orange;
+    text-decoration: underline;
+}
+
+.List { 
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.Base {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 50% 50px 0px;
+    bottom: 0px;
+    padding-bottom: 10px;
+    position: relative;
+}
