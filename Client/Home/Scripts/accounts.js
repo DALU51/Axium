@@ -15,7 +15,6 @@ async function getAccounts() {
             fin.href=("/")
             fin.className = "accs"
 
-            const acc_bal = document.createElement('div');
             const acc_id = document.createElement('div');
             const nickname = document.createElement('div');
             const avail_bal = document.createElement('div');
@@ -26,18 +25,25 @@ async function getAccounts() {
             const account_balance_wrapper = document.createElement('div')
             account_balance_wrapper.className = "Accountbal"
 
-            account_balance_wrapper.append(acc_bal,avail_bal)
+            account_balance_wrapper.append(avail_bal)
             account_id_wrapper.append(nickname,acc_id)
 
              let formatter = new Intl.NumberFormat('en-US',{
               style:'currency',
               currency:'USD',
             })            
+
+            let acc_nickname = item.account_nickname
+            let UpperCase = acc_nickname.toUpperCase()
+
+            let accounts = item.account_id
+            let stringify = accounts.toString()
+            let Spliced = stringify.slice(2)
+            let censor = "***" + Spliced
             
-            acc_bal.textContent = "Account balance: " + formatter.format(item.account_balance)
-            acc_id.textContent = `- ${item.account_id}`
-            nickname.textContent = `${item.account_nickname}`
-            avail_bal.textContent =  "Available balance: " + formatter.format(item.available_balance)
+            acc_id.textContent = ` ${censor}`
+            nickname.textContent = `${UpperCase}`
+            avail_bal.textContent =  formatter.format(item.available_balance)
 
             fin.append(account_id_wrapper,account_balance_wrapper);
             Account_List.append(fin);

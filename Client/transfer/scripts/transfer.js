@@ -1,4 +1,7 @@
 const acc_transfer = document.querySelector('.acc_transfer');
+const dr = document.querySelector('#dr')
+
+dr.append(getAccountID())
 
 acc_transfer.addEventListener('submit', async (e) => {
 
@@ -19,3 +22,18 @@ acc_transfer.addEventListener('submit', async (e) => {
     
     // console.log(data)
 })
+
+async function getAccountID() {
+
+    const accounts = await fetch('/home/accountID')
+    const data = await accounts.json()
+
+    for(item of data){
+
+      const option = document.createElement('option')
+            option.className = "accounts";
+            option.textContent = item.account_id;
+
+      
+    }dr.append(option)
+}

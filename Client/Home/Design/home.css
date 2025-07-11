@@ -68,6 +68,8 @@ body{
     height: 900px;
     width: 1007px;
     display: flex;
+    position: relative;
+    
 }
 
 /* Main content display*/
@@ -88,7 +90,7 @@ body{
 .accs{
     color: white;
     padding: 5px;
-    margin: 10px;
+    margin: 10px 0px;
     border: 1px solid white;
     border-radius: 2.5%;
     font-size: 16px;
@@ -102,7 +104,7 @@ body{
     display: flex;
     flex-direction: row;
     gap: 5px;
-    font-size: 20px;
+    font-size: 15px;
     font-family: Morai;
 }
 
@@ -111,6 +113,9 @@ body{
     flex-direction: column;
     margin: 5px;
     gap: 1px;
+    font-size: 20px;
+    text-align: end;
+    font-weight: bolder;
 }
 
 .accs p{
