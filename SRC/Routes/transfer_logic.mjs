@@ -23,6 +23,7 @@ router.post('/',(req,res) => {
 
                     console.log('No debit account available')
                     res.status(400).json('No debit account available')
+                    
 
                 } else { 
 
@@ -35,13 +36,16 @@ router.post('/',(req,res) => {
                                 if(rows[0] == undefined){
                                         console.log('Credit account not found')
                                         res.status(400).json('Credit account not found')
+                                    
+                                } else {
+                                     console.log('Credit Account Verified')
+
+                                     console.log('Accounts Verified')
+
+                                    verify_Balance();
                                 }
 
-                        console.log('Credit Account Verified')
-
-                        console.log('Accounts Verified')
-
-                         verify_Balance();
+                       
 
                     })
                 }
