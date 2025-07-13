@@ -39,7 +39,7 @@ router.get('/accounts',(req,res) => {
 
 router.get('/accountID',(req,res) => {
     const id = 529955
-    db.query('SELECT account_id FROM Accounts where user_id = ?',[id],(err,rows) => {
+    db.query('SELECT account_id,account_nickname FROM Accounts where user_id = ?',[id],(err,rows) => {
         
         console.log(rows)
         const data = rows

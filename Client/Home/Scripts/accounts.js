@@ -53,12 +53,26 @@ async function getAccounts() {
 
 //Dropdowns
 
-// const debit = document.getElementById()
+const dr = document.querySelector('#dr')
+const cr = document.querySelector('#cr')
 
-// async function dropdown() {
+getAccountID() 
 
-    
-// }
+async function getAccountID() {
+
+    const accounts = await fetch('/home/accountID')
+    const data = await accounts.json()
+
+    for(item of data){
+
+      const option = document.createElement('option')
+            option.className = "accounts";
+            option.value = item.account_id;
+            option.textContent = item.account_nickname;
+
+      dr.append(option)
+    }
+} 
 
 
 //Send Account transfers
