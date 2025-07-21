@@ -10,9 +10,10 @@
 
         <div id="Quick-Transfers">
                 
-            <h2>Quick Transfer</h2>
-       
+            <h2>Quick Transfers</h2>
                 <form id="transfer" class="acc_transfer">
+
+                    <div id="Trans-Message"> </div>
 
                     <div class="form_trans">
                         <label for="dr">From</label>
@@ -21,16 +22,22 @@
 
                     <div class="form_trans">
                         <label for="cr">to</label>
-                        <select name="Cr_Acc" id="cr"> <option value="11111">Petty Cash</option></select>
+                        <select name="Cr_Acc" id="cr">
+                        </select>
                     </div>
                     <div class="form_trans">
                         <label for="amt">Amount</label>
-                        <input type="amount" name="amount" id="amt">
+                        <input type="text" name="amount" pattern="\d*(\.\d{0,2})?$" title="Must contain only numeric characters" id="amt">
                     </div>
                     <div id="sub-accs">
                         <input type="submit" class="Submit" id="submit">
                     </div>
                 </form>
+        </div>
+
+        <div id="Transactions">
+            <h3 class="trans_list_header">Last 5 transactions</h3>
+            
         </div>
     </div>
 </div>

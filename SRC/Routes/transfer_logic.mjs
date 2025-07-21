@@ -17,7 +17,7 @@ router.post('/',(req,res) => {
 
             if (err) throw err
 
-            console.log('Account info')
+            console.log('Account info retrieved')
             try {
                 if(rows[0] == undefined){
 
@@ -83,11 +83,6 @@ router.post('/',(req,res) => {
 
     function performTransaction(){
 
-        console.log(typeof(transfer.Dr_Acc))
-        console.log(transfer.Dr_Acc)
-        console.log(typeof(transfer.amount))
-        console.log(transfer.amount)
-
         db.query(`UPDATE Accounts SET available_balance = available_balance - ${transfer.amount} WHERE account_id = ${transfer.Dr_Acc}`,(err,rows)=> {
             
             if (err) throw err
@@ -139,7 +134,7 @@ router.post('/',(req,res) => {
                         ])
 
                         console.log("Transaction Logged")
-                        res.status(200).json("Transaction completed")
+                        res.status(200).json("Transaction Completed")
                                         
                         }catch{
                             if (err) throw err

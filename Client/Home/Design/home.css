@@ -82,8 +82,7 @@ body{
 }
 
 #acc-container{
-     height: 60%;
-     margin: 3% 5%;
+     margin: 3% 2%;
 }
 
 
@@ -91,8 +90,8 @@ body{
     color: white;
     padding: 5px;
     margin: 10px 0px;
-    border: 1px solid white;
-    border-radius: 2.5%;
+    /* border: 1px solid white; */
+    border-radius: .5%;
     font-size: 16px;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: white;
@@ -122,7 +121,11 @@ body{
     text-decoration: none;
 }
 
-.AccountID:hover{
+/* .AccountID:hover , .Accountbal:hover{
+    color: aqua;
+} */
+
+.accs:hover {
     color: aqua;
 }
 
@@ -130,14 +133,15 @@ body{
 
 #Quick-Transfers { 
     color: white;
-    border: 1px solid white;
-    border-radius: 2%;
+    border-radius: 5%;
     display: flex;
     flex-direction: column;
     padding-bottom: 10px;
-    margin: 0px 5%;
+    margin: 0px 2%;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background-image: url(/Home/Lib/Images/blue_night.jpg);
+    /* background-color: #221d17; */
+    box-shadow: inset 0px 0px 1px 1px #221d17;
 }
 
 #Quick-Transfers h2{
@@ -157,6 +161,14 @@ body{
     padding-top: 5px;
 }
 
+#Trans-Message {
+    display: none;
+    width: 100%;
+    align-self: center;
+    flex-direction:column;
+    align-items: center;
+}
+
 .form_trans{
     display:flex;
     flex-direction: row;
@@ -172,7 +184,7 @@ body{
 }
 
 .form_trans :last-child {
-    width: 75%;
+    width: 80%;
     height: 35px;
     background-color: transparent;
     border: 1px solid white;
@@ -211,6 +223,42 @@ body{
     background-color: lightblue;
 }
 
+/* Transactions */
+
+.trans_list_header{
+    color: white;
+    margin: 10px 0px 0px 0px;
+    text-align: center;
+    font-weight: bolder;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 18px;
+    background-image: url(/Home/Lib/Images/night-sky.jpg);
+    border-radius: 2%;
+    margin: 10px 2% 0px;
+    box-shadow: inset 0px 0px 1px 1px #221d17;
+}
+
+.trans_Container{
+    border-radius: 2%;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    text-decoration: none;
+    color: white;
+    background-image: url(/Home/Lib/Images/night-sky.jpg);
+    background-position: left;
+    gap: 5px;
+    font-size: 14px;
+    padding: 5px;
+    text-align: left;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.trans_Container:hover {
+    color: aqua;
+}
+
+
 /* Cars and news design */
 
 .top_container{
@@ -218,6 +266,8 @@ body{
 }
 
 .news{
-    height: 65%;
+    height: 75%;
 }
+
+
 

@@ -12,7 +12,6 @@ async function getAccounts() {
     for(item of data){
 
          const fin = document.createElement('p');
-            fin.href=("/")
             fin.className = "accs"
 
             const acc_id = document.createElement('div');
@@ -72,6 +71,17 @@ async function getAccountID() {
 
       dr.append(option)
     }
+
+    for(item of data){
+
+      const option = document.createElement('option')
+            option.className = "accounts";
+            option.value = item.account_id;
+            option.textContent = item.account_nickname;
+
+      cr.append(option)
+    }
+
 } 
 
 
@@ -95,6 +105,38 @@ acc_transfer.addEventListener('submit', async (e) => {
  }   
     const response = await fetch('/acctransfer',Make);
     let data = await response.json();
-    
+  
     console.log(data)
+
+    document.getElementById('amt').value = '';
+
+    showMsg()
+
+    setTimeout(() => {
+
+      document.getElementById('Trans-Message').style.display = "none";
+
+    },3000)
+    
+  function showMsg(){
+      const transMsg = document.querySelector('#Trans-Message')
+      document.getElementById('Trans-Message').style.display = "flex";
+
+      const Msg = document.createElement('p')
+      Msg.className = "Msg"
+      Msg.textContent = data
+
+      if(data === "Transaction Completed"){
+
+        document.getElementById('Trans-Message').style.color = "green";
+        
+      } else {
+        document.getElementById('Trans-Message').style.color = "red";
+      }
+
+      transMsg.append(Msg)
+  }
+  
+    // setTimeout(location.reload(),10000)
+    
 })

@@ -44,18 +44,18 @@ router.get('/', (req,res) => {
     })
 })
 
-// router.get('/:userid',(req,res) => {
+router.get('/ind:userid',(req,res) => {
     
-//     const users = req.params.userid
-//     console.log(users)
-//     db.query('SELECT * FROM Users where userID = ?',[users],function(err,rows,fields){
-//         if(err) throw err
-//         else{
-//             console.log(rows)
-//             res.status(201).json(rows)
-//         }
-//        })
-// })
+    const users = "529955"
+    console.log(users)
+    db.query('SELECT * FROM Users where userID = ?',[users],function(err,rows,fields){
+        if(err) throw err
+        else{
+            console.log(rows)
+            res.status(201).json(rows[0])
+        }
+       })
+})
 
 router.post('/delete',(req,res) =>{
     const remove_user = req.body

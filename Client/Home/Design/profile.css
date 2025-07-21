@@ -35,6 +35,7 @@
     margin: 5px 0 0 5px;
     font-size: 28px;
     font-weight: bolder;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;    
 }
 
 .Date{ 
@@ -51,6 +52,7 @@
     margin: 0;
     font-weight: bolder;
     font-size: 32px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .Message { 

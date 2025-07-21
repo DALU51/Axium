@@ -1,64 +1,70 @@
 const profile = document.getElementById('Profile')
 
 //User profile 
-
-async function getBalances() {
-
-    const balance = await fetch('/home/balances')
-    const data = await balance.json()
-
-    return data
-}
-
 function UsrPro(){
 
     const container = document.createElement("div")
     container.className = "Container"
 
-    const imgCont = document.createElement("div")
-    imgCont.className = "profile-Container"
-
+     const profile = document.createElement("div")
+    profile.className = "User-info"
+    
     const UserImg = document.createElement("img")
     UserImg.className = "Usr-Image" 
 
-    const profile = document.createElement("div")
-    profile.className = "User-info"
+    const imgCont = document.createElement("div")
+    imgCont.className = "profile-Container"
 
-    const userName = function name(){
-        x = document.createElement("p")
+    getUserProfile()
+
+    async function getUserProfile() {
+
+    const User = await fetch('/users/ind:userid')
+    const data = await User.json()
+
+    x = document.createElement("p")
         x.className = "UsrNm"
-        x.textContent = "Dalu"
-        return x
-    }
+        x.textContent = data.username
 
-    const online = function status(){
-        y = document.createElement("p")
+    y = document.createElement("p")
         y.className = "Date"
         y.textContent = new Date().toLocaleDateString()
-        return y
+
+    profile.append(x,y)
     }
 
-    profile.append(userName(),online())
     imgCont.append(UserImg,profile)
 
-    const availBal = () => {
+    displayBalance()
 
-        let container = document.createElement("div")
-        container.className = "Balance-Container"
+    async function displayBalance() {
 
-        let balance = document.createElement("h3")
-        balance.textContent = getBalances()
-        balance.className = "Balance"
+        const balance = await fetch('/home/balances')
+        const data = await balance.json()
+
+        let formatter = new Intl.NumberFormat('en-US',{
+              style:'currency',
+              currency:'USD',
+            }) 
+
+        let balanceDisplay = document.createElement("h3")
+        let sumBalance = data
+
+        balanceDisplay.textContent = formatter.format(sumBalance)
+        balanceDisplay.className = "Balance"
+
+        let Balcontainer = document.createElement("div")
+            Balcontainer.className = "Balance-Container"
 
         let msg = document.createElement("p")
-        msg.textContent = "Available Balance"
-        msg.className = "Message"
+            msg.textContent = "Available Balance"
+            msg.className = "Message"
 
-        container.append(msg,balance)
-        return container
+        Balcontainer.append(msg,balanceDisplay)
+        container.append(Balcontainer)
     }
 
-    container.append(imgCont,availBal())
+    container.append(imgCont)
     return container
 }
 
