@@ -220,7 +220,8 @@ body{
 }
 
 #submit:hover{
-    background-color: lightblue;
+    background-image: url(/Home/Lib/Images/blue_night.jpg);
+    background-position: 100%;
 }
 
 /* Transactions */

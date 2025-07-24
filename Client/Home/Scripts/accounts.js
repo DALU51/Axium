@@ -115,6 +115,7 @@ acc_transfer.addEventListener('submit', async (e) => {
     setTimeout(() => {
 
       document.getElementById('Trans-Message').style.display = "none";
+      location.reload()
 
     },3000)
     

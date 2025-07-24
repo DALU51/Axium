@@ -51,8 +51,8 @@ router.get('/ind:userid',(req,res) => {
     db.query('SELECT * FROM Users where userID = ?',[users],function(err,rows,fields){
         if(err) throw err
         else{
-            console.log(rows)
             res.status(201).json(rows[0])
+            console.log("Sent user info")
         }
        })
 })

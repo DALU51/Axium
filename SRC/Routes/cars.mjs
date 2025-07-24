@@ -18,33 +18,22 @@ router.route("/")
         Car.ID = carID;
 
         try {
-            db.promise().query('INSERT INTO Cars VALUES (?,?,?,?,?,?,?)'
+            db.promise().query('INSERT INTO Cars VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)'
                 [
                     Car.ID,
                     Car.Price,
                     Car.userID,
                     Car.addedDate,
-                    Car.Price,
                     Car.VIN,
-                    Car.description
-                ])
-
-            db.promise().query('INSERT INTO Body VALUES (?,?,?,?,?,?,?)'
-                [
-                    Car.ID,
-                    Car.Type,
-                    Car.MakeYear,
-                    Car.Model,
-                    Car.Trim,
-                    Car.Color
-                ])
-
-                db.promise().query('INSERT INTO Performance VALUES (?,?,?,?)'
-                [
-                    Car.ID,
-                    Car.Transmission,
-                    Car.Millage,
-                    Car.FuelType
+                    Car.descript,
+                    Car.carType,
+                    Car.makeYear,
+                    Car.model,
+                    Car.vehicle_Trim,
+                    Car.color,
+                    Car.transmission,
+                    Car.millage,
+                    Car.fuelType
                 ])
 
                 console.log(Car)
@@ -60,26 +49,50 @@ router.route("/")
     })
     .get((req,res) => {
 
-        carInfo()
+        const user = 529955
 
-        function carInfo() {
+        db.query('SELECT * FROM Cars WHERE userID = ?',[user],(err,rows) => {
 
-            db.query('SELECT * FROM Cars where userID =?',[req.body],(err,rows) => {
+            if (err) throw err
 
-                
-                res.json(rows)
-            })
+        rows.forEach( items => {
 
-        }
+            let Body = {
+                "carType": items.carType,
+                "makeYear": items.makeYear,
+                "model": items.model,
+                "vehicle_Trim": items.vehicle_Trim,
+                "color": items.color,
+            }
 
-        const Body = () => {
+            let Performance = {
+                "transmission": items.transmission,
+                "millage": items.millage,
+                "fuelType": items.fuelType
+            }
 
-        }
+            let final = {
+                ID: items.ID,
+                Price: items.Price,
+                userID: items.userID,
+                addedDate: items.addedDate,
+                VIN: items.VIN,
+                Description: items.descript,
+                Body,
+                Performance
+            }
 
-        const Performance = () => {
+            let arr = []
 
-        }
+            for (let item of Array(3).fill(final)) {
+                arr.push(item)
+                console.log(arr)
+             } 
+            }); 
+        res.json(rows)    
+        })
     })
+
     .put(() => {
 
     })
@@ -87,3 +100,4 @@ router.route("/")
 
     })
 
+export default router

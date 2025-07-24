@@ -14,9 +14,13 @@ async function transactions() {
             trans_Container.href = "/"
             trans_Container.className = "trans_Container"
 
+        
+        let id = item.transaction_id
+        let caps = id.toUpperCase()
+
         const transID = document.createElement("div")
             transID.className = "transID"
-            transID.textContent = "Refernce Number: " + item.transaction_id
+            transID.textContent = "Refernce Number: " + caps
 
 
         let y = item.transation_date_time
@@ -39,7 +43,7 @@ async function transactions() {
         const From_To_Wrapper = document.createElement("div")
             From_To_Wrapper.className ="from_to"
 
-        
+            
             const Acc = document.createElement("div")
             Acc.className = "transID"
             Acc.textContent = "From " + item.dr_account + " To " + item.cr_account
