@@ -25,6 +25,8 @@
     border-radius: 2%;
     align-self: baseline;
     height: 40px;
+    width: -webkit-fill-available;
+    display: inline-flex;
 }
 
 #searchBox { 
@@ -36,12 +38,20 @@
     color: white;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: bolder;
-    font-size: 14px;
+    font-size: 18px;
     margin: 0px 2% 0px 1%;
 }
 
 #searchBox:focus { 
     outline: none;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 2000,
+  'GRAD' 1,
+  'opsz' 24;
 }
 
 .Search_submit {
@@ -106,10 +116,89 @@
     background-position: 100%;
 }
 
+/* Car container */
+
 .Car_container {
 
     width: 100%;
     height: 75%;
     border: 1px solid #221d17;
-    border-radius: 1%;
+    position: relative;
 }
+
+.vehicle_wrapper{
+    display: inline-flex;
+    flex-direction: row;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.classic_design{
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.classic_design h2{
+    font-size: 28px;
+    font-weight: bolder;
+    margin: 5px 0px 0px;
+}
+
+.classic_design h3{
+    font-size: 20px;
+    font-weight: bolder;
+    margin: 5px 0px 0px;
+}
+
+.classic_design h4{
+    font-size: 16px;
+    font-weight: bolder;
+    margin: 10px 0px 0px;
+}
+.classic_design p{
+    font-size: 12px;
+    margin: 10px 0px 0px;
+}
+
+.Vehicle_photo{
+    height: 95%;
+    width: 50%;
+    border: 1px solid #221d17;
+    border-radius: 2.5%;
+    margin: .5%;
+}
+
+/* Slides show */
+
+.dots {
+    text-align: center;
+    padding: 5px 10px;
+    position: relative;
+}
+
+.dot {
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+.active, .dot:hover {
+    background-color: #717171;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.0s;
+}
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+
+/* .slides{
+    display: none;
+} */

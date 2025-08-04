@@ -86,9 +86,10 @@ router.route("/")
 
             for (let item of Array(3).fill(final)) {
                 arr.push(item)
-                console.log(arr)
+                // console.log(arr)
              } 
             }); 
+
         res.json(rows)    
         })
     })

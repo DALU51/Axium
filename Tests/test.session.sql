@@ -33,20 +33,21 @@
 
 -- INSERT INTO Cars 
 -- VALUES (
---     22233342,
---     12000.00,
+--     4322211,
+--     100000.00,
 --     529955,
 --     "2025-07-22",
---     "434ffer4351",
---     "One of the most blest cars",
---     "Hyundai",
---     "2013",
---     "Genesis",
---     "4 door",
---     "blue",
---     "Manual",
---     150000,
---     "Gas"
+--     "FR123HUe123",
+--     "This is a second car",
+--     "AMG",
+--     "2025",
+--     "Mercedes Benz",
+--     "2 door",
+--     "Yellow",
+--     "Automatic",
+--     20,
+--     "Gas",
+--     "Mercedes-AMG"
 -- )
 
 -- INSERT INTO Body 
@@ -74,8 +75,11 @@
 -- SELECT * FROM Accounts
 -- SELECT * FROM Users
 
--- DELETE FROM Accounts WHERE account_id = 231405
--- DELETE FROM Transactions WHERE dr_account = 811866
+-- DELETE FROM Transactions WHERE transations_date_time = '2025-07-24 21:27:39'
+-- DELETE FROM Transactions WHERE transaction_id = "f7mf3e9d0b4"
+
+-- DELETE FROM Cars WHERE ID = 4322211
+-- DELETE FROM Accounts WHERE Account_id = 352636
 
 -- ALTER TABLE Transactions
 -- DROP FOREIGN KEY transactions_ibfk_2;
@@ -87,6 +91,7 @@
 
 -- ALTER TABLE Cars
 -- ADD 
+--     Title VARCHAR(255)
     -- carType VARCHAR(255);
     -- makeYear INT;
     -- model VARCHAR(255);
@@ -98,3 +103,8 @@
 
 -- CREATE INDEX Find_Car
 -- ON Cars (ID, userID, VIN, millage, Price);
+
+-- INSERT INTO Cars ( Title ) VALUES
+-- ('Mercedes AMG'),
+-- ('Hyundai Genesis'),
+-- ('Hyundai Elantra');

@@ -71,12 +71,11 @@
 .List a{
     text-decoration: none;
     color: black;
-    font-size: 22px;
+    font-size: 20px;
 }
 
 .List a:hover{ 
-    color: lightblue;
-    text-decoration: underline;
+    color: #1d7fd8;
 }
 
 .List a:active { 
